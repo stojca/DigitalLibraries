@@ -5,6 +5,8 @@ import org.jsoup.nodes.Document;
 
 import javax.swing.*;
 import java.awt.event.*;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class SearchEngine extends JFrame{
@@ -50,5 +52,15 @@ public class SearchEngine extends JFrame{
         Document document = Jsoup.connect("http://www.getty.edu/art/collection/").get();
         String title = document.title();
         System.out.println("title is: " + document.toString());
+        File file = new File("documents/html/index.html");
+        if(file.createNewFile())
+            System.out.println("File is created");
+        else
+            System.out.println("File already exists");
+
+        FileWriter writer = new FileWriter(file);
+        writer.write(document.toString());
+        writer.close();
+
      }
 }

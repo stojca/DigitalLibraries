@@ -37,7 +37,7 @@
           <focusCycleRoot value="false"/>
           <font size="12"/>
           <foreground color="-1"/>
-          <icon value="com/company/icons8-search-48.png"/>
+          <icon value="com/company/resources/icons8-search-48.png"/>
           <iconTextGap value="4"/>
           <opaque value="false"/>
           <requestFocusEnabled value="false"/>
