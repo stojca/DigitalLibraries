@@ -62,6 +62,8 @@ public class SearchEngine extends JFrame{
         establishConnection();
 
         createDocuments();
+
+        MainIndexer.startMethod();
     }
 
     public static void establishConnection()throws IOException{
@@ -94,6 +96,5 @@ public class SearchEngine extends JFrame{
         }
 
     }
-
 
 }
