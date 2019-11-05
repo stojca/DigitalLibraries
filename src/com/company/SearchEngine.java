@@ -12,18 +12,23 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Map;
 
-public class SearchEngine extends JFrame{
+public class  SearchEngine extends JFrame{
     private static Document document = null;
     private JPanel mainView;
     private JTextField searchField;
     private JButton buttonSearch;
     public static JFrame searchEngine = null;
     public Map<Integer, String> collectionOfDocuments;
+    public static String searchTerm;
 
     public static void setDocument(Document document) {
         SearchEngine.document = document;
     }
-    
+
+    public void setSearchTerm(String searchTerm) {
+        this.searchTerm = searchTerm;
+    }
+
     public static void setSearchEngine(JFrame searchEngine) {
         SearchEngine.searchEngine = searchEngine;
     }
@@ -32,13 +37,14 @@ public class SearchEngine extends JFrame{
         buttonSearch.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                setSearchTerm(searchField.getText());
                 JFrame searchResults = new JFrame("SearchResults");
                 searchResults.setContentPane(new SearchResults().SearchResultsPanel);
                 searchResults.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 searchResults.setSize(800,800);
                 searchEngine.setVisible(false);
                 searchResults.setVisible(true);
-
+                MainIndexer.startMethod(searchTerm);
         }
         });
 
@@ -63,7 +69,6 @@ public class SearchEngine extends JFrame{
 
         createDocuments();
 
-        MainIndexer.startMethod();
     }
 
     public static void establishConnection()throws IOException{
