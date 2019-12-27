@@ -24,7 +24,7 @@ public class MainIndexer {
 
             mainIndexer = new MainIndexer();
             mainIndexer.indexFiles();
-            //mainIndexer.search(searchTerm);
+            mainIndexer.search(searchTerm);
         }
         catch (IOException e) {
             e.printStackTrace();
