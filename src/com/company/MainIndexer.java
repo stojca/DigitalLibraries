@@ -9,15 +9,17 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class MainIndexer {
-    String indexDir = "C:\\Users\\Aleksandar\\Desktop\\DigitalLibraries\\documents\\indices";
+    //String indexDir = "C:\\Users\\Aleksandar\\Desktop\\DigitalLibraries\\documents\\indices";
+    String indexDir = "documents/indices";
     Indexer indexer;
     Searcher searcher;
     private static List<String> terms = new ArrayList<String>();
 
     public static void startMethod(String searchTerm) {
-        System.out.println("searchTerm is: "+ searchTerm);
+        //System.out.println("searchTerm is: "+ searchTerm);
         MainIndexer mainIndexer;
 
         try {
@@ -38,11 +40,10 @@ public class MainIndexer {
 
     private void indexFiles() throws IOException, ParseException
     {
-        //cleanIndexFolder();
+        cleanIndexFolder();
         indexer = new Indexer(indexDir);
 
-        //indexing all files in for loop TODO
-        indexer.createIndex("C:\\Users\\Aleksandar\\Desktop\\DigitalLibraries\\documents\\html", new TextFileFilter());
+        indexer.createIndex("documents/html/searchHtmls", new TextFileFilter());
 
         long endTime = System.currentTimeMillis();
         indexer.close();
@@ -60,12 +61,15 @@ public class MainIndexer {
             Document doc = searcher.getDocument(scoreDoc);
             System.out.println("File: " + doc.get(Constants.FILE_PATH));
 
-            //String splittedTerm = splitPath(doc.get(LuceneConstants.FILE_PATH));
-            terms.add(doc.get(Constants.FILE_PATH));
+            for(Map.Entry<String, String> file : SearchEngine.file_urls.entrySet())
+            {
+                if(doc.get(Constants.FILE_PATH).contains(file.getKey()))
+                {
+                    System.out.println(file.getValue());
+                }
+            }
         }
 
-        //findVersions();
-        //checkVersionInTerm();
         searcher.close();
 
     }

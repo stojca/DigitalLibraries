@@ -34,7 +34,7 @@ public class  SearchEngine extends JFrame{
     public static int number_of_pages = 555;
     public static String searchUrl;
     public static List<Document> listOfDocuements = new ArrayList<>();
-    public static Integer number_of_objects = 9162;
+    public static Integer number_of_objects = 0;
     public static Map<Integer, String> museum_objects = new HashMap<Integer, String>();
 
 
@@ -91,14 +91,14 @@ public class  SearchEngine extends JFrame{
 
 
         //get all search pages
-        //for(int i = 512; i <= number_of_pages; i++)
+        //for(int i = 0; i <= number_of_pages; i++)
             //establishConnection(i);
 
         //web crawling
         //addImportantTerms();??
 
         //crete images
-        createImages();
+        //createImages();
 
         //
         mapUrlWithObject();
@@ -137,18 +137,7 @@ public class  SearchEngine extends JFrame{
         String previous_href_link = null;
 
         Elements links = search_page_document.select("a[href]");
-        //Elements temp_links = new Elements();
 
-        /*int count = 1;
-        int created = 11;
-        for(Element element: links)
-        {
-            if(count > created)
-            {
-                temp_links.add(element);
-            }
-            count++;
-        }*/
 
         for(Element link: links) {
             if (link.attr("href").contains("objects") && !link.attr("href").equals(previous_href_link)) {
@@ -177,17 +166,6 @@ public class  SearchEngine extends JFrame{
                 previous_href_link = link.attr("href");
             }
         }
-    }
-
-    public static void addImportantTerms()
-    {
-        importantTerm.add("/art/antiquities/");
-        importantTerm.add("/art/drawings/");
-        importantTerm.add("/art/manuscripts/");
-        importantTerm.add("/art/paintings/");
-        importantTerm.add("/art/photographs/");
-        importantTerm.add("/art/sculpture-and-decorative-arts/");
-
     }
 
     public static void parseFile(String filepath)
@@ -302,11 +280,12 @@ public class  SearchEngine extends JFrame{
         for (File file : listOfFiles) {
             if (file.isFile()) {
                 //System.out.println(file.getAbsolutePath());
-                System.out.println(file.toString());
-                //parseFile_forUrl(file.getAbsolutePath(), file.toString());
+                //System.out.println(file.getName());
+                parseFile_forUrl(file.getAbsolutePath(), file.getName());
 
             }
         }
+
     }
 
     public static void parseFile_forUrl(String file_path, String file_name)
