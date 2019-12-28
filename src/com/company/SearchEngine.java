@@ -247,15 +247,9 @@ public class  SearchEngine extends JFrame{
 
             i++;
         }
-        //saveImage(imageUrl, destinationFile);
     }
 
     public static void saveImage(String imageUrl, String destinationFile) throws IOException {
-        String imageUrl_ = "http://media.getty.edu/museum/images/web/enlarge/13553701.jpg";
-
-
-        //System.out.println(imageUrl_);
-        //System.out.println(imageUrl);
 
         URL url = new URL(imageUrl);
         InputStream is = url.openStream();
