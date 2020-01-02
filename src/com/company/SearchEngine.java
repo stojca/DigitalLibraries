@@ -19,9 +19,12 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URL;
 
+import static com.company.SearchByTextResults.searchTextConstructor;
+
 public class  SearchEngine extends JFrame{
+
     private static Document search_page_document = null;
-    private JPanel mainView;
+    public JPanel mainView;
     private JTextField searchField;
     private JButton buttonSearch;
     public static JFrame searchEngine = null;
@@ -56,17 +59,25 @@ public class  SearchEngine extends JFrame{
         SearchEngine.searchEngine = searchEngine;
     }
 
+    public static void searchEngineConstructor()
+    {
+        searchEngine = new JFrame("SearchEngine");
+        searchEngine.setContentPane(new SearchEngine().mainView);
+        searchEngine.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        searchEngine.setLocationRelativeTo(null);
+        searchEngine.setSize(800,800);
+        searchEngine.setVisible(true);
+        setSearchEngine(searchEngine);
+    }
+
     public SearchEngine() {
+
         buttonSearch.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 setSearchTerm(searchField.getText());
-                JFrame searchResults = new JFrame("SearchResults");
-                searchResults.setContentPane(new SearchResults().SearchResultsPanel);
-                searchResults.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                searchResults.setSize(800,800);
+                searchTextConstructor();
                 searchEngine.setVisible(false);
-                searchResults.setVisible(true);
                 MainIndexer.startMethod(searchTerm);
         }
         });
@@ -78,18 +89,13 @@ public class  SearchEngine extends JFrame{
                 searchField.setText("");
             }
         });
+
     }
 
     public static void main(String[] args) throws IOException, Exception{
 
-        searchEngine = new JFrame("SearchEngine");
-        searchEngine.setContentPane(new SearchEngine().mainView);
-        searchEngine.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        searchEngine.setSize(800,800);
-        searchEngine.setVisible(true);
-        setSearchEngine(searchEngine);
 
-
+        //searchEngineConstructor();
         //get all search pages
         //for(int i = 0; i <= number_of_pages; i++)
             //establishConnection(i);
@@ -101,7 +107,7 @@ public class  SearchEngine extends JFrame{
         //createImages();
 
         //
-        mapUrlWithObject();
+        //mapUrlWithObject();
 
     }
 
@@ -311,5 +317,7 @@ public class  SearchEngine extends JFrame{
             e.printStackTrace();
         }
     }
+
+
 
 }
