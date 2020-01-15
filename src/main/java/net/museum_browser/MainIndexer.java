@@ -1,7 +1,7 @@
-package com.company;
+package net.museum_browser;
 
 import org.apache.lucene.document.Document;
-import org.apache.lucene.queryParser.ParseException;
+import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TopDocs;
 
@@ -18,7 +18,7 @@ public class MainIndexer {
     Searcher searcher;
     private static List<String> terms = new ArrayList<String>();
 
-    public static void startMethod(String searchTerm) {
+    public static void startMethod(String searchTerm){
         //System.out.println("searchTerm is: "+ searchTerm);
         MainIndexer mainIndexer;
 
@@ -36,9 +36,10 @@ public class MainIndexer {
             e.printStackTrace();
         }
 
+
     }
 
-    private void indexFiles() throws IOException, ParseException
+    private void indexFiles() throws IOException
     {
         cleanIndexFolder();
         indexer = new Indexer(indexDir);
@@ -46,7 +47,7 @@ public class MainIndexer {
         indexer.createIndex("documents/html/searchHtmls", new TextFileFilter());
 
         long endTime = System.currentTimeMillis();
-        indexer.close();
+
     }
 
     private void search(String searchQuery) throws IOException, ParseException {
@@ -56,20 +57,21 @@ public class MainIndexer {
         TopDocs hits = searcher.search(searchQuery);
         long endTime = System.currentTimeMillis();
         System.out.println(hits.totalHits + " documents found. Time :" + (endTime - startTime));
+
         for(ScoreDoc scoreDoc : hits.scoreDocs)
         {
             Document doc = searcher.getDocument(scoreDoc);
             System.out.println("File: " + doc.get(Constants.FILE_PATH));
 
-            for(Map.Entry<String, String> file : SearchEngine.file_urls.entrySet())
-            {
-                if(doc.get(Constants.FILE_PATH).contains(file.getKey()))
-                {
-                    System.out.println(file.getValue());
-                }
-            }
+//            for(Map.Entry<String, String> file : SearchEngine.file_urls.entrySet())
+//            {
+//                if(doc.get(Constants.FILE_PATH).contains(file.getKey()))
+//                {
+//                    System.out.println(file.getValue());
+//                }
+//            }
         }
-
+        indexer.close();
         searcher.close();
 
     }

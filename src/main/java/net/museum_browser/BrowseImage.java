@@ -1,15 +1,15 @@
-package com.company;
+package net.museum_browser;
 
-import java.awt.Image;
+import com.sun.org.apache.xerces.internal.impl.xpath.regex.ParseException;
+
+import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-import javax.swing.*;
-import javax.swing.filechooser.FileNameExtensionFilter;
 
-
-
-public class BrowseImage extends JFrame{
+public class BrowseImage extends JFrame {
     JButton button ;
     JLabel label;
 
@@ -37,6 +37,16 @@ public class BrowseImage extends JFrame{
                     File selectedFile = file.getSelectedFile();
                     String path = selectedFile.getAbsolutePath();
                     label.setIcon(ResizeImage(path));
+
+                    try
+                    {
+                        StartImageOperations.image_operations(path);
+                    }
+                    catch (Exception exp)
+                    {
+                        exp.printStackTrace();
+                    }
+
                 }
                 //if the user click on save in Jfilechooser
 

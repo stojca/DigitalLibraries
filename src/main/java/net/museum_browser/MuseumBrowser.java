@@ -1,10 +1,11 @@
-package com.company;
+package net.museum_browser;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import static com.company.SearchEngine.searchEngineConstructor;
+import static net.museum_browser.SearchEngine.searchEngineConstructor;
+
 
 public class MuseumBrowser {
     private JButton searchByImageButton;

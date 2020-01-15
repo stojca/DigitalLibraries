@@ -1,10 +1,13 @@
-package com.company;
+package net.museum_browser;
 
+import org.apache.lucene.analysis.core.WhitespaceAnalyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.index.CorruptIndexException;
-import org.apache.lucene.queryParser.ParseException;
-import org.apache.lucene.queryParser.QueryParser;
+import org.apache.lucene.index.DirectoryReader;
+import org.apache.lucene.index.IndexReader;
+import org.apache.lucene.queryparser.classic.ParseException;
+import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.ScoreDoc;
@@ -15,6 +18,7 @@ import org.apache.lucene.util.Version;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Paths;
 
 
 public class Searcher {
@@ -23,11 +27,17 @@ public class Searcher {
     Query query;
     public Searcher(String indexDirectoryPath) throws IOException
     {
-        Directory indexDirectory = FSDirectory.open(new File(indexDirectoryPath));
+
+        /*IndexReader indexDirectory = DirectoryReader.open(FSDirectory.open(Paths.get(indexDirectoryPath)));
+
         indexSearcher = new IndexSearcher(indexDirectory);
-        queryParser = new QueryParser(Version.LUCENE_36,
-                Constants.CONTENTS,
-                new StandardAnalyzer(Version.LUCENE_36));
+        queryParser = new QueryParser(Constants.CONTENTS, new WhitespaceAnalyzer());*/
+
+        IndexReader indexDirectory = DirectoryReader.open(Indexer.writer);
+        indexSearcher = new IndexSearcher(indexDirectory);
+
+        queryParser = new QueryParser(Constants.CONTENTS, new StandardAnalyzer());
+
     }
     public TopDocs search(String searchQuery) throws IOException, ParseException
     {
@@ -40,6 +50,6 @@ public class Searcher {
     }
     public void close() throws IOException
     {
-        indexSearcher.close();
+        //indexSearcher.close();
     }
 }

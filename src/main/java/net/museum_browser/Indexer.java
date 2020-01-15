@@ -1,30 +1,41 @@
-package com.company;
+package net.museum_browser;
 
-import org.apache.lucene.index.IndexWriter;
 
+import org.apache.lucene.analysis.core.SimpleAnalyzer;
+import org.apache.lucene.analysis.core.WhitespaceAnalyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
-import org.apache.lucene.document.Document;
-import org.apache.lucene.document.Field;
+import org.apache.lucene.document.*;
 import org.apache.lucene.index.CorruptIndexException;
+import org.apache.lucene.index.IndexWriter;
+import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.util.Version;
 
-import java.io.File;
-import java.io.FileFilter;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class Indexer {
-    private IndexWriter writer;
+
+
+    public static  IndexWriter writer;
     public Indexer(String indexDirectoryPath) throws IOException
     {
-        //this directory will contain the indexes
-        FSDirectory indexDirectory = FSDirectory.open(new File(indexDirectoryPath));
+
+        /*FSDirectory indexDirectory = FSDirectory.open(Paths.get(indexDirectoryPath));
 
         //create the indexer
-        writer = new IndexWriter(indexDirectory,
-                new StandardAnalyzer(Version.LUCENE_36),true,
-                IndexWriter.MaxFieldLength.UNLIMITED);
+        IndexWriterConfig conf = new IndexWriterConfig(new StandardAnalyzer());
+        writer = new IndexWriter(indexDirectory, conf);*/
+
+
+
+        FSDirectory indexDirectory = FSDirectory.open(Paths.get(indexDirectoryPath));
+        IndexWriterConfig conf = new IndexWriterConfig(new SimpleAnalyzer());
+        //create the indexer
+        writer = new IndexWriter(indexDirectory, conf);
+
     }
     public void close() throws CorruptIndexException, IOException
     {
@@ -32,27 +43,35 @@ public class Indexer {
     }
     private Document getDocument(File file) throws IOException
     {
+
+        InputStream stream = new FileInputStream(file);
         Document document = new Document();
-        //index file contents
-        Field contentField = new Field(Constants.CONTENTS, new FileReader(file));
-        //index file name
-        Field fileNameField = new Field(Constants.FILE_NAME,
-                file.getName(),
-                Field.Store.YES,Field.Index.NOT_ANALYZED);
-        //index file path
-        Field filePathField = new Field(Constants.FILE_PATH,
-                file.getCanonicalPath(),
-                Field.Store.YES,Field.Index.NOT_ANALYZED);
+
+        Field pathField = new StringField("path", file.toString(), Field.Store.YES);
+        document.add(pathField);
+
+        document.add(new TextField("contents", new BufferedReader(new InputStreamReader(stream, StandardCharsets.UTF_8))));
+
+
+        Field contentField = new Field(Constants.CONTENTS, new FileReader(file), new FieldType());
+        Field fileNameField = new Field(Constants.FILE_NAME, file.getName(), TextField.TYPE_STORED);
+        Field filePathField = new Field(Constants.FILE_PATH, file.getCanonicalPath(), TextField.TYPE_STORED);
+
+
         document.add(contentField);
         document.add(fileNameField);
         document.add(filePathField);
         return document;
     }
+
+
     private void indexFile(File file) throws IOException
     {
         System.out.println("Indexing "+file.getCanonicalPath());
         Document document = getDocument(file);
         writer.addDocument(document);
+
+
     }
     public int createIndex(String dataDirPath, FileFilter filter) throws IOException
     {

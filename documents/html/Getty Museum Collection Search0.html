@@ -1,0 +1,531 @@
+<!doctype html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if IE 9]><html class="no-js ie9" lang="en"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en">
+ <!--<![endif]-->
+ <head> 
+  <title>Getty Museum Collection Search</title> 
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge"> 
+  <meta charset="UTF-8"> 
+  <meta name="robots" content="noindex,follow"> 
+  <meta name="viewport" content="width=device-width"> 
+  <meta property="og:title" content="Collection (Getty Museum)"> 
+  <meta property="og:site_name" content="The J. Paul Getty in Los Angeles"> 
+  <meta property="og:description" content="Explore the collection of the J. Paul Getty Museum at the Getty Center and the Getty Villa."> 
+  <meta property="og:type" content="website"> 
+  <meta property="og:image" content="http://www.getty.edu/global/r/images/getty_logo_og.png"> 
+  <meta name="description" content="Explore the collection of the J. Paul Getty Museum at the Getty Center and the Getty Villa."> 
+  <meta name="keywords" content="Getty Museum collections, artworks, art works, art history, video, interpretation of art, acquisitions, artists, Getty art, collections Getty, collezioni Getty, colecciones Getty, Sammlung Getty, Getty exhibits, Getty current exhibitions, Getty Museum exhibits, los angeles collections, antiquities, decorative arts, sculpture, manuscripts, photography, paintings, drawings"> 
+  <link rel="shortcut icon" href="/global/r/images/getty_logo_favicon.ico"> 
+  <link rel="apple-touch-icon img_src" href="/global/r/images/getty_logo_favicon.png"> 
+  <!--
+		/* @license
+		 * MyFonts Webfont Build ID 2577370, 2013-06-10T18:14:07-0400
+		 *
+		 * The fonts listed in this notice are subject to the End User License
+		 * Agreement(s) entered into by the website owner. All other parties are
+		 * explicitly restricted from using the Licensed Webfonts(s).
+		 *
+		 * You may obtain a valid license at the URLs below.
+		 *
+		 * Webfont: Humanist 531 by Bitstream
+		 * URL: http://www.myfonts.com/fonts/bitstream/humanist-531/humanist-531/
+		 *
+		 * Webfont: Humanist 531 Bold by Bitstream
+		 * URL: http://www.myfonts.com/fonts/bitstream/humanist-531/bold/
+		 *
+		 *
+		 * License: http://www.myfonts.com/viewlicense?type=web&buildid=2577370
+		 * Webfonts copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
+		 *
+		 * (c) 2013 MyFonts Inc
+		*/
+		--> 
+  <link rel="stylesheet" href="/global/r/css/normalize.css?1565418454"> 
+  <link rel="stylesheet" href="/global/r/css/app.css?1565418454"> 
+  <link rel="stylesheet" href="/global/r/css/helpers.css?1565418454"> 
+  <link rel="stylesheet" href="/global/r/css/art.css?1565418454"> 
+  <!-- add support for the date slider; when the necessary scripts/css have been moved to the /global/r/ path, the paths below can be updated --> 
+  <link rel="stylesheet" type="text/css" href="/art/collection/static/scripts/vendor/jslider/css/jslider.css?1565418454"> 
+  <link rel="stylesheet" type="text/css" href="/art/collection/static/scripts/vendor/jslider/css/jslider.round.plastic.css?1565418454"> 
+  <link rel="stylesheet" type="text/css" href="/art/collection/static/scripts/vendor/select2/3.5.1/select2.css?1565418454"> 
+  <link rel="stylesheet" type="text/css" href="/art/collection/static/stylesheets/styles.css?1565418454"> 
+  <!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="/art/collection/static/stylesheets/styles.ie.css?1565418454" /><![endif]--> 
+  <!--[if lte IE 9]><link rel="stylesheet" href="/global/r/css/ie.css"><![endif]--> 
+  <script type="text/javascript" src="/global/r/js/vendor/jquery.js?1565418454"></script> 
+  <script type="text/javascript" src="/global/r/js/vendor/jquery.getscripts.js?1565418454"></script> 
+  <script type="text/javascript" src="/global/r/js/getty.set-sections.js?1565418454"></script> 
+  <script type="text/javascript" src="/global/r/js/getty.get-includes.js?1565418454"></script> 
+  <script type="text/javascript">
+			// load the rest of our head scripts.
+			// In order to add any for this page specifically, just push into the array:
+			// getty_header_script_array.push("/global/r/js/vendor/jquery.fittext.js","/global/r/js/vendor/jquery.mCustomScrollbar.concat.min.js");
+			getty_header_script_array.push(
+				
+			);
+			ajax_header_scripts(getty_header_script_array);
+		</script> 
+  <!-- Google Analytics start --> 
+  <script>
+			(function(i, s, o, g, r, a, m) {
+				i['GoogleAnalyticsObject'] = r;
+				i[r] = i[r] || function() {
+					(i[r].q = i[r].q || []).push(arguments)
+				}, i[r].l = 1 * new Date();
+				a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0];
+				a.async = 1;
+				a.src   = g;
+				m.parentNode.insertBefore(a, m)
+			})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+			
+			ga('create',  'UA-8087223-1', 'auto');
+			ga('require', 'linkid', 'linkid.js');
+			ga('send',    'pageview');
+		</script> 
+  <!-- Google Analytics end --> 
+  <!-- Google Analytics: to handle pdfs, docs, xls start --> 
+  <script type="text/javascript">
+			$(document).ready(function() {
+				$("a[href$='pdf'], a[href$='rtf'], a[href$='doc'], a[href$='xls'], a[href*='bit.ly']").each(function(index) {
+					var pdfLabel   = $(this).attr('href');
+					var pdfOnClick = "ga('send', 'pageview','" + pdfLabel + "');";
+					$(this).attr("onClick", pdfOnClick);
+				});
+			});
+		</script> 
+  <!-- Google Analytics: to handle pdfs, docs, xls end  --> 
+  <!-- Google Analytics: to handle outbound links --> 
+  <script type="text/javascript">
+			function trackOutboundLink(link, category, action) {
+				try {
+					_gaq.push(['_trackEvent', category , action]);
+				} catch(err) {
+					
+				}
+				setTimeout(function() {
+					document.location.href = link.href;
+				}, 100);
+			}
+		</script> 
+  <!-- Google Analytics: to handle outbound links end --> 
+  <!--[if !IE 9]><!--> 
+  <script type="text/javascript">var switchTo5x=true;</script> 
+  <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js?1565418454"></script> 
+  <script type="text/javascript">stLight.options({publisher: "e01daac0-22e7-400b-8a4b-2f79ffbcdb5f", doNotHash: true, onhover: false});</script> 
+  <!--<![endif]--> 
+  <!-- add support for the date slider; when the necessary scripts/css have been moved to the /global/r/ path, the paths below can be updated 
+		<script type="text/javascript" src="/art/collection/static/scripts/vendor/jslider/js/jshashtable-2.1_src.js?1565418454"></script>
+		<script type="text/javascript" src="/art/collection/static/scripts/vendor/jslider/js/jquery.numberformatter-1.2.3.js?1565418454script>
+		<script type="text/javascript" src="/art/collection/static/scripts/vendor/jslider/js/jquery.dependClass-0.1.js?1565418454"></script>
+		<script type="text/javascript" src="/art/collection/static/scripts/vendor/jslider/js/draggable-0.1.js?1565418454"></script>
+		<script type="text/javascript" src="/art/collection/static/scripts/vendor/jslider/js/jquery.slider.js?1565418454"></script>
+		<script type="text/javascript" src="/art/collection/static/scripts/vendor/numeric/jquery.numeric.js?1565418454"></script>
+		--> 
+  <!-- add support for the select2 jquery plugin; this is used to support our autocomplete/multi-select controls 
+		<script type="text/javascript" src="/art/collection/static/scripts/vendor/select2/3.5.1/select2.min.js?1565418454"></script>
+		<script type="text/javascript" src="/art/collection/static/scripts/collection-pages-common.js?1565418454"></script>
+		--> 
+ </head> 
+ <body class="art"> 
+  <section id="mobile-panel-nav" class="mobile-panel hide-for-print show-for-medium-down"> 
+   <div id="mobile-panel-wrap" class="top-bar-section"> 
+    <ul id="mobile-panel-nav-sections"> 
+     <li> 
+      <!-- leave no space between these, as they're inline-block, and whitespace messes up layout--> <a href="http://www.getty.edu">Getty.edu</a><span class="icon-remove icon-large close"></span> </li> 
+     <li class="divider"></li> 
+     <li id="mobile-panel-nav-sections-container" class="has-dropdown"> <a id="mobile-panel-nav-section-name" href="/">The Getty</a> 
+      <ul id="mobile-panel-nav-section-nav-container" class="dropdown"> 
+      </ul> </li> 
+    </ul> 
+    <ul id="mobile-panel-nav-extras"> 
+     <li class="divider"></li> 
+    </ul> 
+   </div> 
+  </section> 
+  <div id="wrapper"> 
+   <div id="site-alert" class="essential hide"></div> 
+   <div id="global-nav-wrapper" class="row collapse"></div> 
+   <div id="banner" class="row collapse hide-on-print hide-for-medium-down"> 
+    <div class="small-12 columns"> 
+     <h1> <a id="getty-logo" href="http://www.getty.edu/" title="The J. Paul Getty"><span class="icon-getty-logo pull-left"></span></a> <a id="section-title" href="http://www.getty.edu/museum/">The J. Paul Getty Museum</a> </h1> 
+    </div> 
+   </div> 
+   <div class="row hide-on-print hide-for-medium-down" id="level2-nav"> 
+    <div class="small-12"> 
+     <nav class="top-bar"> 
+      <section class="top-bar-section"> 
+       <ul id="level2-nav-container" class="left"></ul> 
+      </section> 
+     </nav> 
+    </div> 
+   </div> 
+   <div class="row"> 
+    <div class="small-12 columns" id="main"> 
+     <div class="row" id="utilities-row"> 
+      <!-- print, share --> 
+      <div id="utility-display" class="small-1 small-push-11 columns hide-on-print"> 
+       <span class="icon-cog icon-border pull-right show-for-small"></span> 
+      </div> 
+      <!-- Utilities and title set for no left column, or "flush left" --> 
+      <div id="utilities" class="small-11 small-pull-1 medium-3 medium-push-9 columns hide-on-print"></div> 
+      <div class="small-11 small-pull-1 medium-9 medium-pull-3 columns"> 
+       <h2>Museum Collection Search</h2> 
+      </div> 
+      <!-- /flush-left title utilities --> 
+     </div>
+     <!-- / utilities-row --> 
+     <form id="collection_search" action="/art/collection/search/" method="post" name="collectionsearch">
+      <input type="hidden" name="page" value="">
+      <input type="hidden" name="view" value="grid">
+      <input type="hidden" name="behaviour" value="random">
+      <div class="row" id="content">
+       <div id="center-column" class="small-12 medium-8 large-9 columns">
+        <section class="row">
+         <div class="small-12 columns">
+          <p class="italic justify">When no search terms have been specified, you may explore and browse through a randomly ordered selection of objects with images from the Getty Museum's collection. <a href="/art/collection/search/?all">Click here to see all objects...</a></p>
+          <div class="row">
+           <div class="small-12 columns show-for-small">
+            <a href="#right-column" class="button expand"><span class="icon-caret-down"></span>&nbsp;&nbsp;Jump to Search</a>
+           </div>
+          </div>
+          <div class="row">
+           <div class="hide-for-medium-down view-options">
+            <ul class="button-group even-2">
+             <li><button name="view" value="grid" class="tiny view disabled"><span class="icon-th icon-2x" title="Grid View"></span></button></li>
+             <li><button name="view" value="list" class="tiny view"><span class="icon-th-list icon-2x icon-dark" title="List View"></span></button></li>
+            </ul>
+           </div>
+           <div class="hide-for-medium-down small-4 large-4 columns">
+            <p id="viewing-totals-top" class="viewing-totals">
+             <nobr>
+              <span>Viewing </span>1 – 18 of 102,768 results (5,710 pages)
+             </nobr></p>
+           </div>
+           <div class="show-for-medium-down small-4 large-4 columns">
+            <p id="viewing-totals-top" class="viewing-totals pages">
+             <nobr>
+              Page 1 of 5,710
+             </nobr></p>
+           </div>
+           <div class="small-8 large-6 columns pagination-controls">
+            <ul id="pagination-top" class="pagination pull-right">
+             <li class="arrow"><a><span class="icon-caret-left icon-large grayed"></span></a></li>
+             <li class="current unavailable"><a><span>1</span></a></li>
+             <li><a href="/art/collection/search/?pg=2&amp;view=grid&amp;query=YTozOntzOjQ6InNvcnQiO3M6NjoicmFuZG9tIjtzOjQ6InNlZWQiO3M6MzI6Ijk5NGU3N2MwMDNlOGIzNzg5MjkyOTg3NDM5YzAxMDU1IjtzOjk6Imhhc19pbWFnZSI7YjoxO30%3D"><span>2</span></a></li>
+             <li><a href="/art/collection/search/?pg=3&amp;view=grid&amp;query=YTozOntzOjQ6InNvcnQiO3M6NjoicmFuZG9tIjtzOjQ6InNlZWQiO3M6MzI6Ijk5NGU3N2MwMDNlOGIzNzg5MjkyOTg3NDM5YzAxMDU1IjtzOjk6Imhhc19pbWFnZSI7YjoxO30%3D"><span>3</span></a></li>
+             <li><a href="/art/collection/search/?pg=4&amp;view=grid&amp;query=YTozOntzOjQ6InNvcnQiO3M6NjoicmFuZG9tIjtzOjQ6InNlZWQiO3M6MzI6Ijk5NGU3N2MwMDNlOGIzNzg5MjkyOTg3NDM5YzAxMDU1IjtzOjk6Imhhc19pbWFnZSI7YjoxO30%3D"><span>4</span></a></li>
+             <li><a href="/art/collection/search/?pg=5&amp;view=grid&amp;query=YTozOntzOjQ6InNvcnQiO3M6NjoicmFuZG9tIjtzOjQ6InNlZWQiO3M6MzI6Ijk5NGU3N2MwMDNlOGIzNzg5MjkyOTg3NDM5YzAxMDU1IjtzOjk6Imhhc19pbWFnZSI7YjoxO30%3D"><span>5</span></a></li>
+             <li class="arrow"><a href="/art/collection/search/?pg=2&amp;view=grid&amp;query=YTozOntzOjQ6InNvcnQiO3M6NjoicmFuZG9tIjtzOjQ6InNlZWQiO3M6MzI6Ijk5NGU3N2MwMDNlOGIzNzg5MjkyOTg3NDM5YzAxMDU1IjtzOjk6Imhhc19pbWFnZSI7YjoxO30%3D"><span class="icon-caret-right icon-large"></span></a></li>
+            </ul>
+           </div>
+          </div>
+          <hr class="ruler">
+          <section id="search-results">
+           <ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-6">
+            <li>
+             <figure>
+              <a href="http://www.getty.edu/art/collection/objects/158335/jane-st-john-porta-maggiore-bakers-tomb-rome-british-1856-1859/" target="">
+               <div style="width:100px;height:79px;background-color:#eee;background-image:url(http://www.getty.edu/museum/media/images/web/thumbnail/17348201.jpg);background-repeat:no-repeat;background-size:100px 79px;" alt=""></div></a>
+              <figcaption>
+               <a href="http://www.getty.edu/art/collection/objects/158335/jane-st-john-porta-maggiore-bakers-tomb-rome-british-1856-1859/" target=""><h5>Porta Maggiore &amp; Bakers Tomb, Rome</h5></a>
+               <p>Jane St. John, British,<span class="display-date">1856–1859</span><span class="display-number">84.XA.760.14.31</span></p>
+              </figcaption>
+             </figure></li>
+            <li>
+             <figure>
+              <a href="http://www.getty.edu/art/collection/objects/76847/lecocq-frene-hotel-musee-de-cluny-french-about-1860/" target="">
+               <div style="width:100px;height:52px;background-color:#eee;background-image:url(http://media.getty.edu/museum/images/web/thumbnail/08337301.jpg);background-repeat:no-repeat;background-size:100px 52px;" alt=""></div></a>
+              <figcaption>
+               <a href="http://www.getty.edu/art/collection/objects/76847/lecocq-frene-hotel-musee-de-cluny-french-about-1860/" target=""><h5>[Hotel - Musee de Cluny]</h5></a>
+               <p>Lecocq-Frêné, French,<span class="display-date">about 1860</span><span class="display-number">84.XC.979.5806</span></p>
+              </figcaption>
+             </figure></li>
+            <li>
+             <figure>
+              <a href="http://www.getty.edu/art/collection/objects/26441/unknown-maker-fragment-of-a-figure-of-a-female-dancer-maenad-south-italian-late-3rd-early-2nd-century-bc/" target="">
+               <div style="width:100px;height:129px;background-color:#eee;background-image:url(http://media.getty.edu/museum/images/web/thumbnail/03154901.jpg);background-repeat:no-repeat;background-size:100px 129px;" alt=""></div></a>
+              <figcaption>
+               <a href="http://www.getty.edu/art/collection/objects/26441/unknown-maker-fragment-of-a-figure-of-a-female-dancer-maenad-south-italian-late-3rd-early-2nd-century-bc/" target=""><h5>Fragment of a Figure of a Female Dancer (Maenad)</h5></a>
+               <p>Unknown, South Italian,<span class="display-date">late 3rd–early 2nd century B.C.</span><span class="display-number">83.AD.354.31</span></p>
+              </figcaption>
+             </figure></li>
+            <li>
+             <figure>
+              <a href="http://www.getty.edu/art/collection/objects/151571/edward-s-curtis-two-medicine-river-piegan-american-1911/" target="">
+               <div style="width:100px;height:73px;background-color:#eee;background-image:url(http://www.getty.edu/museum/media/images/web/thumbnail/16644001.jpg);background-repeat:no-repeat;background-size:100px 73px;" alt=""></div></a>
+              <figcaption>
+               <a href="http://www.getty.edu/art/collection/objects/151571/edward-s-curtis-two-medicine-river-piegan-american-1911/" target=""><h5>Two Medicine River - Piegan</h5></a>
+               <p>Edward S. Curtis, American,<span class="display-date">1911</span><span class="display-number">84.XO.755.1.5</span></p>
+              </figcaption>
+             </figure></li>
+            <li>
+             <figure>
+              <a href="http://www.getty.edu/art/collection/objects/138430/adolphe-braun-cie-gotthardbahn-compressoren-french-about-1875-1882/" target="">
+               <div style="width:100px;height:83px;background-color:#eee;background-image:url(http://media.getty.edu/museum/images/web/thumbnail/15129201.jpg);background-repeat:no-repeat;background-size:100px 83px;" alt=""></div></a>
+              <figcaption>
+               <a href="http://www.getty.edu/art/collection/objects/138430/adolphe-braun-cie-gotthardbahn-compressoren-french-about-1875-1882/" target=""><h5>Gotthardbahn: Compressoren</h5></a>
+               <p>Adolphe Braun &amp; Cie, French,<span class="display-date">about 1875–1882</span><span class="display-number">84.XO.392.66</span></p>
+              </figcaption>
+             </figure></li>
+            <li>
+             <figure>
+              <a href="http://www.getty.edu/art/collection/objects/90907/francis-bedford-llangollen-view-on-the-canal-near-english-1864-1865/" target="">
+               <div style="width:100px;height:155px;background-color:#eee;background-image:url(http://media.getty.edu/museum/images/web/thumbnail/09743301.jpg);background-repeat:no-repeat;background-size:100px 155px;" alt=""></div></a>
+              <figcaption>
+               <a href="http://www.getty.edu/art/collection/objects/90907/francis-bedford-llangollen-view-on-the-canal-near-english-1864-1865/" target=""><h5>Llangollen - View on the Canal near.</h5></a>
+               <p>Francis Bedford, English,<span class="display-date">1864–1865</span><span class="display-number">84.XD.1157.1535</span></p>
+              </figcaption>
+             </figure></li>
+            <li>
+             <figure>
+              <a href="http://www.getty.edu/art/collection/objects/261060/robert-mapplethorpe-david-in-cowboy-hat-american-1974/" target="">
+               <div style="width:100px;height:127px;background-color:#eee;background-image:url(http://bolt.getty.edu/collection/Museum/private/images/web/thumbnail/34099601.jpg);background-repeat:no-repeat;background-size:100px 127px;" alt=""></div></a>
+              <figcaption>
+               <a href="http://www.getty.edu/art/collection/objects/261060/robert-mapplethorpe-david-in-cowboy-hat-american-1974/" target=""><h5>[David in cowboy hat]</h5></a>
+               <p>Robert Mapplethorpe, American,<span class="display-date">1974</span><span class="display-number">2011.9.12.b</span></p>
+              </figcaption>
+             </figure></li>
+            <li>
+             <figure>
+              <a href="http://www.getty.edu/art/collection/objects/31578/unknown-maker-unattributed-trebizond-coin-byzantine-about-13th-century/" target="">
+               <div style="width:100px;height:100px;background-color:#eee;background-image:url(http://media.getty.edu/museum/images/web/thumbnail/03753301.jpg);background-repeat:no-repeat;background-size:100px 100px;" alt=""></div></a>
+              <figcaption>
+               <a href="http://www.getty.edu/art/collection/objects/31578/unknown-maker-unattributed-trebizond-coin-byzantine-about-13th-century/" target=""><h5>Unattributed Trebizond Coin</h5></a>
+               <p>Unknown, Byzantine,<span class="display-date">about 13th century</span><span class="display-number">75.NH.109.6727</span></p>
+              </figcaption>
+             </figure></li>
+            <li>
+             <figure>
+              <a href="http://www.getty.edu/art/collection/objects/27741/unknown-maker-attic-red-figure-cup-fragment-type-b-greek-attic-5th-century-bc/" target="">
+               <div style="width:100px;height:96px;background-color:#eee;background-image:url(http://media.getty.edu/museum/images/web/thumbnail/03366801.jpg);background-repeat:no-repeat;background-size:100px 96px;" alt=""></div></a>
+              <figcaption>
+               <a href="http://www.getty.edu/art/collection/objects/27741/unknown-maker-attic-red-figure-cup-fragment-type-b-greek-attic-5th-century-bc/" target=""><h5>Attic Red-Figure Cup Fragment (type B)</h5></a>
+               <p>Unknown, Greek (Attic),<span class="display-date">5th century B.C.</span><span class="display-number">83.AE.284.270</span></p>
+              </figcaption>
+             </figure></li>
+            <li>
+             <figure>
+              <a href="http://www.getty.edu/art/collection/objects/52185/louis-fleckenstein-double-frame-landscapes-american-1907-1943-/" target="">
+               <div style="width:100px;height:138px;background-color:#eee;background-image:url(http://www.getty.edu/museum/media/images/web/thumbnail/058692B1V1.jpg);background-repeat:no-repeat;background-size:100px 138px;" alt=""></div></a>
+              <figcaption>
+               <a href="http://www.getty.edu/art/collection/objects/52185/louis-fleckenstein-double-frame-landscapes-american-1907-1943-/" target=""><h5>[Double Frame - Landscapes]</h5></a>
+               <p>Louis Fleckenstein, American,<span class="display-date">1907 - 1943 </span><span class="display-number">85.XM.28.1901</span></p>
+              </figcaption>
+             </figure></li>
+            <li>
+             <figure>
+              <a href="http://www.getty.edu/art/collection/objects/186920/william-chaffers-decorative-plate-1872/" target="">
+               <div style="width:100px;height:175px;background-color:#eee;background-image:url(http://www.getty.edu/museum/media/images/web/thumbnail/20457501.jpg);background-repeat:no-repeat;background-size:100px 175px;" alt=""></div></a>
+              <figcaption>
+               <a href="http://www.getty.edu/art/collection/objects/186920/william-chaffers-decorative-plate-1872/" target=""><h5>[Decorative plate]</h5></a>
+               <p>William Chaffers,<span class="display-date">1872</span><span class="display-number">84.XB.935.23.1.11</span></p>
+              </figcaption>
+             </figure></li>
+            <li>
+             <figure>
+              <a href="http://www.getty.edu/art/collection/objects/77177/attributed-to-london-stereoscopic-company-the-young-coopers-about-1860/" target="">
+               <div style="width:100px;height:49px;background-color:#eee;background-image:url(http://media.getty.edu/museum/images/web/thumbnail/08370301.jpg);background-repeat:no-repeat;background-size:100px 49px;" alt=""></div></a>
+              <figcaption>
+               <a href="http://www.getty.edu/art/collection/objects/77177/attributed-to-london-stereoscopic-company-the-young-coopers-about-1860/" target=""><h5>The Young Coopers.</h5></a>
+               <p>Attributed to London Stereoscopic Company,<span class="display-date">about 1860</span><span class="display-number">84.XC.873.9488</span></p>
+              </figcaption>
+             </figure></li>
+            <li>
+             <figure>
+              <a href="http://www.getty.edu/art/collection/objects/214870/eadweard-j-muybridge-trotting-american-negative-1878-1879-print-1881/" target="">
+               <div style="width:100px;height:86px;background-color:#eee;background-image:url(http://www.getty.edu/museum/media/images/web/thumbnail/23605001.jpg);background-repeat:no-repeat;background-size:100px 86px;" alt=""></div></a>
+              <figcaption>
+               <a href="http://www.getty.edu/art/collection/objects/214870/eadweard-j-muybridge-trotting-american-negative-1878-1879-print-1881/" target=""><h5>Trotting</h5></a>
+               <p>Eadweard J. Muybridge, American,<span class="display-date">negative 1878–1879; print 1881</span><span class="display-number">85.XO.362.35</span></p>
+              </figcaption>
+             </figure></li>
+            <li>
+             <figure>
+              <a href="http://www.getty.edu/art/collection/objects/66266/unknown-maker-american-date-palm-st-augustine-fla-american-about-1870-1880/" target="">
+               <div style="width:100px;height:51px;background-color:#eee;background-image:url(http://media.getty.edu/museum/images/web/thumbnail/07279201.jpg);background-repeat:no-repeat;background-size:100px 51px;" alt=""></div></a>
+              <figcaption>
+               <a href="http://www.getty.edu/art/collection/objects/66266/unknown-maker-american-date-palm-st-augustine-fla-american-about-1870-1880/" target=""><h5>Date Palm, St. Augustine, Fla.</h5></a>
+               <p>Unknown maker, American, American,<span class="display-date">about 1870–1880</span><span class="display-number">84.XC.873.6134</span></p>
+              </figcaption>
+             </figure></li>
+            <li>
+             <figure>
+              <a href="http://www.getty.edu/art/collection/objects/155111/p-casas-abarca-woman-holding-a-letter-spanish-about-1905/" target="">
+               <div style="width:100px;height:144px;background-color:#eee;background-image:url(http://www.getty.edu/museum/media/images/web/thumbnail/17019501.jpg);background-repeat:no-repeat;background-size:100px 144px;" alt=""></div></a>
+              <figcaption>
+               <a href="http://www.getty.edu/art/collection/objects/155111/p-casas-abarca-woman-holding-a-letter-spanish-about-1905/" target=""><h5>[Woman holding a letter]</h5></a>
+               <p>P. Casas Abarca, Spanish,<span class="display-date">about 1905</span><span class="display-number">84.XO.758.5.12</span></p>
+              </figcaption>
+             </figure></li>
+            <li>
+             <figure>
+              <a href="http://www.getty.edu/art/collection/objects/89963/unknown-maker-british-kenilworth-parish-church-british-1865-1870/" target="">
+               <div style="width:100px;height:163px;background-color:#eee;background-image:url(http://media.getty.edu/museum/images/web/thumbnail/09648901.jpg);background-repeat:no-repeat;background-size:100px 163px;" alt=""></div></a>
+              <figcaption>
+               <a href="http://www.getty.edu/art/collection/objects/89963/unknown-maker-british-kenilworth-parish-church-british-1865-1870/" target=""><h5>Kenilworth Parish Church.</h5></a>
+               <p>Unknown maker, British, British,<span class="display-date">1865–1870</span><span class="display-number">84.XD.1157.429</span></p>
+              </figcaption>
+             </figure></li>
+            <li>
+             <figure>
+              <a href="http://www.getty.edu/art/collection/objects/248790/mike-disfarmer-untitled-american-about-1943-1944/" target="">
+               <div style="width:100px;height:156px;background-color:#eee;background-image:url(http://media.getty.edu/museum/images/web/thumbnail/31957101.jpg);background-repeat:no-repeat;background-size:100px 156px;" alt=""></div></a>
+              <figcaption>
+               <a href="http://www.getty.edu/art/collection/objects/248790/mike-disfarmer-untitled-american-about-1943-1944/" target=""><h5>[Untitled]</h5></a>
+               <p>Mike Disfarmer, American,<span class="display-date">about 1943–1944</span><span class="display-number">2009.90.14</span></p>
+              </figcaption>
+             </figure></li>
+            <li>
+             <figure>
+              <a href="http://www.getty.edu/art/collection/objects/148399/james-sinclair-fourteenth-earl-of-caithness-william-bambridge-young-cedar-in-belvidere-wood-british-1864/" target="">
+               <div style="width:100px;height:131px;background-color:#eee;background-image:url(http://media.getty.edu/museum/images/web/thumbnail/16261801.jpg);background-repeat:no-repeat;background-size:100px 131px;" alt=""></div></a>
+              <figcaption>
+               <a href="http://www.getty.edu/art/collection/objects/148399/james-sinclair-fourteenth-earl-of-caithness-william-bambridge-young-cedar-in-belvidere-wood-british-1864/" target=""><h5>Young Cedar in Belvidere Wood</h5></a>
+               <p>James Sinclair, fourteenth earl of Caithness, William Bambridge, British,<span class="display-date">1864</span><span class="display-number">84.XO.734.3.12</span></p>
+              </figcaption>
+             </figure></li>
+           </ul>
+          </section>
+          <p><a href="/art/collection/search/#wrapper" class="back-to-top"><span class="icon-caret-up"></span>&nbsp;&nbsp;Back to top</a></p>
+          <div class="row">
+           <div class="hide-for-medium-down view-options">
+            <ul class="button-group even-2">
+             <li><button name="view" value="grid" class="tiny view disabled"><span class="icon-th icon-2x" title="Grid View"></span></button></li>
+             <li><button name="view" value="list" class="tiny view"><span class="icon-th-list icon-2x icon-dark" title="List View"></span></button></li>
+            </ul>
+           </div>
+           <div class="hide-for-medium-down small-4 large-4 columns">
+            <p id="viewing-totals-top" class="viewing-totals">
+             <nobr>
+              <span>Viewing </span>1 – 18 of 102,768 results (5,710 pages)
+             </nobr></p>
+           </div>
+           <div class="show-for-medium-down small-4 large-4 columns">
+            <p id="viewing-totals-top" class="viewing-totals pages">
+             <nobr>
+              Page 1 of 5,710
+             </nobr></p>
+           </div>
+           <div class="small-8 large-6 columns pagination-controls">
+            <ul id="pagination-top" class="pagination pull-right">
+             <li class="arrow"><a><span class="icon-caret-left icon-large grayed"></span></a></li>
+             <li class="current unavailable"><a><span>1</span></a></li>
+             <li><a href="/art/collection/search/?pg=2&amp;view=grid&amp;query=YTozOntzOjQ6InNvcnQiO3M6NjoicmFuZG9tIjtzOjQ6InNlZWQiO3M6MzI6Ijk5NGU3N2MwMDNlOGIzNzg5MjkyOTg3NDM5YzAxMDU1IjtzOjk6Imhhc19pbWFnZSI7YjoxO30%3D"><span>2</span></a></li>
+             <li><a href="/art/collection/search/?pg=3&amp;view=grid&amp;query=YTozOntzOjQ6InNvcnQiO3M6NjoicmFuZG9tIjtzOjQ6InNlZWQiO3M6MzI6Ijk5NGU3N2MwMDNlOGIzNzg5MjkyOTg3NDM5YzAxMDU1IjtzOjk6Imhhc19pbWFnZSI7YjoxO30%3D"><span>3</span></a></li>
+             <li><a href="/art/collection/search/?pg=4&amp;view=grid&amp;query=YTozOntzOjQ6InNvcnQiO3M6NjoicmFuZG9tIjtzOjQ6InNlZWQiO3M6MzI6Ijk5NGU3N2MwMDNlOGIzNzg5MjkyOTg3NDM5YzAxMDU1IjtzOjk6Imhhc19pbWFnZSI7YjoxO30%3D"><span>4</span></a></li>
+             <li><a href="/art/collection/search/?pg=5&amp;view=grid&amp;query=YTozOntzOjQ6InNvcnQiO3M6NjoicmFuZG9tIjtzOjQ6InNlZWQiO3M6MzI6Ijk5NGU3N2MwMDNlOGIzNzg5MjkyOTg3NDM5YzAxMDU1IjtzOjk6Imhhc19pbWFnZSI7YjoxO30%3D"><span>5</span></a></li>
+             <li class="arrow"><a href="/art/collection/search/?pg=2&amp;view=grid&amp;query=YTozOntzOjQ6InNvcnQiO3M6NjoicmFuZG9tIjtzOjQ6InNlZWQiO3M6MzI6Ijk5NGU3N2MwMDNlOGIzNzg5MjkyOTg3NDM5YzAxMDU1IjtzOjk6Imhhc19pbWFnZSI7YjoxO30%3D"><span class="icon-caret-right icon-large"></span></a></li>
+            </ul>
+           </div>
+          </div>
+         </div>
+        </section>
+       </div>
+       <div id="right-column" class="small-12 medium-4 large-3 columns">
+        <div class="row">
+         <hr class="show-for-small">
+         <a name="right-column"></a>
+         <div class="small-12 columns tile-bg-60 tile">
+          <h5 class="title">Search Options</h5>
+          <div>
+           <div class="row">
+            <div class="small-12 columns">
+             <h5>Maker/Artist Name</h5>
+             <input class="search-text" type="text" name="maker" id="qt-maker">
+             <br>
+             <h5>Title</h5>
+             <input class="search-text truncate clearable" type="text" name="title" id="qt-title" placeholder="Optional title keywords...">
+             <br>
+             <h5>Medium/Materials</h5>
+             <input class="search-text truncate clearable" type="text" name="medium" id="qt-medium" placeholder="Optional medium/materials...">
+             <br>
+             <h5>Culture/Country</h5>
+             <input class="search-text truncate clearable" type="text" name="culture" id="qt-culture" placeholder="Optional culture/country...">
+             <br>
+             <div class="label_and_checkbox_row">
+              <div class="label_and_checkbox_row_label">
+               <h5>Object Number</h5>
+              </div>
+              <div class="label_and_checkbox_row_checkbox">
+               <nobr>
+                <label for="numbers_search_exact" title="Perform an exact object number match?">Exact?</label> 
+                <input title="Perform Exact Match?" type="checkbox" id="numbers_search_exact" name="numbers_search_exact">
+               </nobr>
+              </div>
+              <div class="clear"></div>
+             </div>
+             <input class="search-text truncate clearable" type="text" name="numbers" id="qt-numbers" placeholder="Optional object number...">
+             <br>
+             <h5>Provenance Name</h5>
+             <input class="search-text" type="text" name="provenance" id="qt-provenance">
+             <br>
+             <h5>Collecting Area</h5>
+             <select name="department[]" id="qt-department" multiple data-placeholder="Optional collection..."></select>
+             <br>
+             <br>
+             <h5>General Keywords</h5>
+             <input class="search-text truncate clearable" type="text" name="qt" id="qt" placeholder="Optional keywords..." autocomplete="off" spellcheck="false">
+             <br>
+             <br>
+             <h5>Additional Filters</h5>
+             <ul class="has-inputs filter-list small-block-grid-1 medium-block-grid-1 large-block-grid-1 noselect">
+              <li><label for="filter_has_image"><input type="checkbox" name="filter_has_image" id="filter_has_image"> Only Objects with Images</label></li>
+              <li><label for="filter_open_content"><input type="checkbox" name="filter_open_content" id="filter_open_content"> Only Open Content Program</label></li>
+              <li><label for="filter_on_view_center"><input type="checkbox" name="filter_on_view_center" id="filter_on_view_center"> On View at The Getty Center</label></li>
+              <li><label for="filter_on_view_villa"><input type="checkbox" name="filter_on_view_villa" id="filter_on_view_villa"> On View at The Getty Villa</label></li>
+             </ul>
+             <br>
+             <h5>Sort Order</h5>
+             <select id="qt-sort" name="sort"><option value="-score">Relevance</option><option value="sort.maker">▲ Maker/Artist Name</option><option value="-sort.maker">▼ Maker/Artist Name</option><option value="sort.title">▲ Title</option><option value="-sort.title">▼ Title</option><option value="sort.date.began.year,sort.date.ended.year">▲ Date</option><option value="-sort.date.began.year,-sort.date.ended.year">▼ Date</option><option value="sort.number">▲ Museum Object Number</option><option value="-sort.number">▼ Museum Object Number</option></select>
+             <br>
+             <br>
+             <div class="hide-for-medium-down- center">
+              <input class="button truncate round small reset" type="reset" id="reset" name="action" value="Reset">
+             </div>
+             <div class="hide-for-medium-down- center">
+              <input class="button truncate round small search" type="submit" name="action" value="Search">
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </form>
+     <div style="margin:0 8px;">
+      <hr style="margin-bottom:1em;">
+      <aside id="collection-changing-data-warning" class="credits">
+       <p>This information is published from the Museum's collection database. Updates and additions stemming from research and imaging activities are ongoing, with new content added each week.<br><a href="http://www.getty.edu/art/collection/feedback" class="fancybox" data-fancybox-type="iframe"><span style="white-space: nowrap;"><span class="icon-comment"></span>&nbsp;Help</span> us improve our records by sharing your corrections or suggestions.</a></p>
+       <p>Every effort has been made to accurately determine the rights status of works and their images. Please contact <a href="mailto:rights@getty.edu">Museum Rights and Reproductions</a> if you have further information on the rights status of a work contrary, or in addition to, the information in our records.</p>
+      </aside>
+     </div> 
+     <!-- /#content --> 
+    </div> 
+    <!-- /#main --> 
+   </div> 
+   <!-- /.row --> 
+  </div> 
+  <!-- /#wrapper --> 
+  <!-- Footer --> 
+  <footer id="footer" class="row"></footer> 
+  <script type="text/javascript">
+			getty_footer_script_array.push(
+				"/art/collection/static/scripts/vendor/jslider/js/jshashtable-2.1_src.js?1565418454",
+				"/art/collection/static/scripts/vendor/jslider/js/jquery.numberformatter-1.2.3.js?1565418454",
+				"/art/collection/static/scripts/vendor/jslider/js/tmpl.js?1565418454",
+				"/art/collection/static/scripts/vendor/jslider/js/jquery.dependClass-0.1.js?1565418454",
+				"/art/collection/static/scripts/vendor/jslider/js/draggable-0.1.js?1565418454",
+				"/art/collection/static/scripts/vendor/jslider/js/jquery.slider.js?1565418454",
+				"/art/collection/static/scripts/vendor/numeric/jquery.numeric.js?1565418454",
+				"/art/collection/static/scripts/vendor/select2/3.5.1/select2.min.js?1565418454",
+				"/art/collection/static/scripts/index_footer_script.js?1565418454",
+				"/art/collection/static/scripts/collection-pages-common.js?1565418454"
+			);
+			getty_chrome_includes();
+		</script> 
+  <!-- a:1:{s:4:"view";s:4:"grid";} -->   
+ </body>
+</html>

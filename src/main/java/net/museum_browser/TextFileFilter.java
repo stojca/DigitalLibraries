@@ -1,4 +1,4 @@
-package com.company;
+package net.museum_browser;
 
 import java.io.File;
 import java.io.FileFilter;

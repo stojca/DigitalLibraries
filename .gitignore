@@ -1,4 +1,2 @@
 **.idea/
-**out/
-**indices/
-**.iml
+**.gradle/
