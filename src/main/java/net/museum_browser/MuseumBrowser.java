@@ -1,10 +1,10 @@
 package net.museum_browser;
 
-import javax.swing.*;
+import static net.museum_browser.SearchEngine.searchEngineConstructor;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import static net.museum_browser.SearchEngine.searchEngineConstructor;
+import javax.swing.*;
 
 
 public class MuseumBrowser {
@@ -18,12 +18,26 @@ public class MuseumBrowser {
     }
 
     public MuseumBrowser() {
+        initialize();
+    }
+
+    private void initialize() {
+
+        museumBrowser = new JFrame("MuseumBrowser");
+        museumBrowser.setContentPane(this.mainView);
+        museumBrowser.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        museumBrowser.setLocationRelativeTo(null);
+        museumBrowser.setSize(600,500);
+        museumBrowser.setVisible(true);
+        setMuseumBrowser(museumBrowser);
+
         searchByImageButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                museumBrowser.setVisible(false);
+                museumBrowser.dispose();
+                //museumBrowser.setVisible(false);
                 setMuseumBrowser(museumBrowser);
-                new BrowseImage();
+                new GetImage();
             }
         });
         searchByTextButton.addActionListener(new ActionListener() {
@@ -31,22 +45,10 @@ public class MuseumBrowser {
             public void actionPerformed(ActionEvent actionEvent) {
                 searchEngineConstructor();
 
-                museumBrowser.setVisible(false);
+                museumBrowser.dispose();
                 setMuseumBrowser(museumBrowser);
 
             }
         });
-    }
-
-    public static void main(String[] args){
-
-        museumBrowser = new JFrame("MuseumBrowser");
-        museumBrowser.setContentPane(new MuseumBrowser().mainView);
-        museumBrowser.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        museumBrowser.setLocationRelativeTo(null);
-        museumBrowser.setSize(800,800);
-        museumBrowser.setVisible(true);
-        setMuseumBrowser(museumBrowser);
-
     }
 }

@@ -1,23 +1,29 @@
 package net.museum_browser;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
+import static net.museum_browser.SearchByTextResults.searchTextConstructor;
 
-import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import static net.museum_browser.SearchByTextResults.searchTextConstructor;
+import javax.swing.*;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 
 public class SearchEngine extends JFrame{
@@ -25,6 +31,7 @@ public class SearchEngine extends JFrame{
     public JPanel mainView;
     private JTextField searchField;
     private JButton buttonSearch;
+    private JButton backButton;
     public static JFrame searchEngine = null;
     public Map<Integer, String> collectionOfDocuments;
     public static Map<String, String> image_urls = new HashMap<>();
@@ -63,7 +70,7 @@ public class SearchEngine extends JFrame{
         searchEngine.setContentPane(new SearchEngine().mainView);
         searchEngine.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         searchEngine.setLocationRelativeTo(null);
-        searchEngine.setSize(800,800);
+        searchEngine.setSize(600,500);
         searchEngine.setVisible(true);
         setSearchEngine(searchEngine);
     }
@@ -88,6 +95,13 @@ public class SearchEngine extends JFrame{
             }
         });
 
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                new MuseumBrowser();
+                searchEngine.setVisible(false);
+            }
+        });
     }
 
     public static void main(String[] args) throws IOException, Exception{
