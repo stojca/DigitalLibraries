@@ -1,7 +1,5 @@
 package net.museum_browser;
 
-import com.sun.org.apache.xerces.internal.impl.xpath.regex.ParseException;
-
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
