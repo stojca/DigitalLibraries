@@ -35,7 +35,7 @@ public class MuseumBrowser {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 museumBrowser.dispose();
-                //museumBrowser.setVisible(false);
+                //imageResults.setVisible(false);
                 setMuseumBrowser(museumBrowser);
                 new GetImage();
             }

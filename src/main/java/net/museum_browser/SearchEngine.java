@@ -1,6 +1,5 @@
 package net.museum_browser;
 
-import static net.museum_browser.SearchByTextResults.searchTextConstructor;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -81,7 +80,7 @@ public class SearchEngine extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 setSearchTerm(searchField.getText());
-                searchTextConstructor();
+                new SearchByTextResults(searchTerm);
                 searchEngine.setVisible(false);
                 MainIndexer.startMethod(searchTerm);
             }

@@ -31,7 +31,7 @@ public class SearcherImage {
         BufferedImage img = ImageIO.read(f);
 
         IndexReader ir = DirectoryReader.open(FSDirectory.open(Paths.get("documents/image_indexes")));
-        ImageSearcher searcher = new GenericFastImageSearcher(10, CEDD.class);
+        ImageSearcher searcher = new GenericFastImageSearcher(16, CEDD.class);
         //ImageSearcher searcher = new GenericFastImageSearcher(1, AutoColorCorrelogram.class);
 
         // searching with a image file ...

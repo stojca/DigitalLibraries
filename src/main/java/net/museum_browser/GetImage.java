@@ -1,6 +1,5 @@
 package net.museum_browser;
 
-import static net.museum_browser.SearchEngine.searchEngineConstructor;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -10,17 +9,21 @@ import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 
+
 public class GetImage extends JFrame{
   private JButton searchByImageButton;
   private JButton button1;
   private JPanel panel1;
   private JLabel label;
-  public static JFrame museumBrowser = null;
+    private JButton button2;
+    public static JFrame museumBrowser = null;
+
 
   public GetImage() {
     super("Choose image");
     initialize();
   }
+
 
   private void initialize() {
     button1.addActionListener(new ActionListener() {
@@ -37,26 +40,37 @@ public class GetImage extends JFrame{
         if(result == JFileChooser.APPROVE_OPTION){
           File selectedFile = file.getSelectedFile();
           String path = selectedFile.getAbsolutePath();
-          label.setIcon(ResizeImage(path));
+          //label.setIcon(ResizeImage(path));
 
-          try
-          {
-            StartImageOperations.image_operations(path);
-          }
-          catch (Exception exp)
-          {
-            exp.printStackTrace();
-          }
+//          try
+//          {
+//            //StartImageOperations.image_operations(path);
+//          }
+//          catch (Exception exp)
+//          {
+//            exp.printStackTrace();
+//          }
 
+          new ImageResults(path);
+          museumBrowser.setVisible(false);
         }
         //if the user click on save in Jfilechooser
-
 
         else if(result == JFileChooser.CANCEL_OPTION){
           System.out.println("User didn't select a file");
         }
       }
     });
+
+    button2.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        museumBrowser.dispose();
+        new MuseumBrowser();
+      }
+    });
+
+
     museumBrowser = new JFrame("GetImage");
     museumBrowser.setContentPane(this.panel1);
     museumBrowser.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

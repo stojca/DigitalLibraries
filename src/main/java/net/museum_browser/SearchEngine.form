@@ -6,7 +6,7 @@
       <xy x="20" y="20" width="500" height="400"/>
     </constraints>
     <properties>
-      <background color="-16053"/>
+      <background color="-1776412"/>
       <foreground color="-2105377"/>
     </properties>
     <border type="none"/>
@@ -16,7 +16,14 @@
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Back"/>
+          <background color="-1"/>
+          <enabled value="true"/>
+          <focusPainted value="false"/>
+          <hideActionText value="false"/>
+          <icon value="sharp_keyboard_backspace_black_18dp.png"/>
+          <text value=""/>
+          <verifyInputWhenFocusTarget value="true"/>
+          <visible value="true"/>
         </properties>
       </component>
       <component id="55fd1" class="javax.swing.JTextField" binding="searchField">
@@ -37,8 +44,15 @@
           <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <background color="-1"/>
+          <enabled value="true"/>
+          <font size="9"/>
           <icon value="icons8-search-48.png"/>
+          <inheritsPopupMenu value="false"/>
+          <selected value="false"/>
           <text value=""/>
+          <verifyInputWhenFocusTarget value="true"/>
+          <visible value="true"/>
         </properties>
       </component>
     </children>
