@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="net.museum_browser.SearchByTextResults">
-  <grid id="27dc6" binding="SearchResultsPanel" layout-manager="GridLayoutManager" row-count="2" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="SearchResultsPanel" layout-manager="GridLayoutManager" row-count="13" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="500" height="400"/>
+      <xy x="20" y="20" width="500" height="533"/>
     </constraints>
-    <properties/>
+    <properties>
+      <background color="-1776412"/>
+    </properties>
     <border type="none"/>
     <children>
       <component id="e7dfe" class="javax.swing.JLabel">
@@ -17,11 +19,6 @@
           <text value="Your searched term is: "/>
         </properties>
       </component>
-      <vspacer id="e5d4b">
-        <constraints>
-          <grid row="1" column="0" row-span="1" col-span="4" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-        </constraints>
-      </vspacer>
       <component id="23f88" class="javax.swing.JLabel" binding="label1">
         <constraints>
           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
@@ -31,6 +28,214 @@
           <font size="26" style="2"/>
           <foreground color="-4324313"/>
           <text value="Label"/>
+        </properties>
+      </component>
+      <component id="e6e26" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="22"/>
+          <text value="Found documents are:"/>
+        </properties>
+      </component>
+      <component id="9f8b3" class="javax.swing.JButton" binding="prevButton" default-binding="true">
+        <constraints>
+          <grid row="12" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-2561"/>
+          <text value="Prev"/>
+        </properties>
+      </component>
+      <component id="ad3cf" class="javax.swing.JButton" binding="nextButton" default-binding="true">
+        <constraints>
+          <grid row="12" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-2561"/>
+          <text value="Next"/>
+        </properties>
+      </component>
+      <component id="eac4e" class="javax.swing.JButton" binding="btn10">
+        <constraints>
+          <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-12107288"/>
+          <borderPainted value="false"/>
+          <contentAreaFilled value="false"/>
+          <focusPainted value="false"/>
+          <focusable value="true"/>
+          <font size="18"/>
+          <foreground color="-12107288"/>
+          <icon value="WhatsApp Image 2020-01-18 at 11.30.04.jpeg"/>
+          <rolloverEnabled value="true"/>
+          <text value="Button"/>
+          <verifyInputWhenFocusTarget value="true"/>
+          <visible value="true"/>
+        </properties>
+      </component>
+      <component id="d7310" class="javax.swing.JButton" binding="btn9">
+        <constraints>
+          <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <borderPainted value="false"/>
+          <contentAreaFilled value="false"/>
+          <focusPainted value="false"/>
+          <focusable value="true"/>
+          <font size="18"/>
+          <foreground color="-12107288"/>
+          <icon value="WhatsApp Image 2020-01-18 at 11.30.04.jpeg"/>
+          <rolloverEnabled value="true"/>
+          <text value="Button"/>
+          <verifyInputWhenFocusTarget value="true"/>
+          <visible value="true"/>
+        </properties>
+      </component>
+      <component id="e4c5" class="javax.swing.JButton" binding="btn8">
+        <constraints>
+          <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <borderPainted value="false"/>
+          <contentAreaFilled value="false"/>
+          <focusPainted value="false"/>
+          <focusable value="true"/>
+          <font size="18"/>
+          <foreground color="-12107288"/>
+          <icon value="WhatsApp Image 2020-01-18 at 11.30.04.jpeg"/>
+          <rolloverEnabled value="true"/>
+          <text value="Button"/>
+          <verifyInputWhenFocusTarget value="true"/>
+          <visible value="true"/>
+        </properties>
+      </component>
+      <component id="7aab7" class="javax.swing.JButton" binding="btn7">
+        <constraints>
+          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <borderPainted value="false"/>
+          <contentAreaFilled value="false"/>
+          <focusPainted value="false"/>
+          <focusable value="true"/>
+          <font size="18"/>
+          <foreground color="-12107288"/>
+          <icon value="WhatsApp Image 2020-01-18 at 11.30.04.jpeg"/>
+          <rolloverEnabled value="true"/>
+          <text value="Button"/>
+          <verifyInputWhenFocusTarget value="true"/>
+          <visible value="true"/>
+        </properties>
+      </component>
+      <component id="60208" class="javax.swing.JButton" binding="btn6">
+        <constraints>
+          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <borderPainted value="false"/>
+          <contentAreaFilled value="false"/>
+          <focusPainted value="false"/>
+          <focusable value="true"/>
+          <font size="18"/>
+          <foreground color="-12107288"/>
+          <icon value="WhatsApp Image 2020-01-18 at 11.30.04.jpeg"/>
+          <rolloverEnabled value="true"/>
+          <text value="Button"/>
+          <verifyInputWhenFocusTarget value="true"/>
+          <visible value="true"/>
+        </properties>
+      </component>
+      <component id="ef18" class="javax.swing.JButton" binding="btn5">
+        <constraints>
+          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <borderPainted value="false"/>
+          <contentAreaFilled value="false"/>
+          <focusPainted value="false"/>
+          <focusable value="true"/>
+          <font size="18"/>
+          <foreground color="-12107288"/>
+          <icon value="WhatsApp Image 2020-01-18 at 11.30.04.jpeg"/>
+          <rolloverEnabled value="true"/>
+          <text value="Button"/>
+          <verifyInputWhenFocusTarget value="true"/>
+          <visible value="true"/>
+        </properties>
+      </component>
+      <component id="3f7a3" class="javax.swing.JButton" binding="btn4">
+        <constraints>
+          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <borderPainted value="false"/>
+          <contentAreaFilled value="false"/>
+          <focusPainted value="false"/>
+          <focusable value="true"/>
+          <font size="18"/>
+          <foreground color="-12107288"/>
+          <icon value="WhatsApp Image 2020-01-18 at 11.30.04.jpeg"/>
+          <rolloverEnabled value="true"/>
+          <text value="Button"/>
+          <verifyInputWhenFocusTarget value="true"/>
+          <visible value="true"/>
+        </properties>
+      </component>
+      <component id="c8eb" class="javax.swing.JButton" binding="btn3">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <borderPainted value="false"/>
+          <contentAreaFilled value="false"/>
+          <focusPainted value="false"/>
+          <focusable value="true"/>
+          <font size="18"/>
+          <foreground color="-12107288"/>
+          <icon value="WhatsApp Image 2020-01-18 at 11.30.04.jpeg"/>
+          <rolloverEnabled value="true"/>
+          <text value="Button"/>
+          <verifyInputWhenFocusTarget value="true"/>
+          <visible value="true"/>
+        </properties>
+      </component>
+      <component id="df8d8" class="javax.swing.JButton" binding="btn2">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <borderPainted value="false"/>
+          <contentAreaFilled value="false"/>
+          <focusPainted value="false"/>
+          <focusable value="true"/>
+          <font size="18"/>
+          <foreground color="-12107288"/>
+          <icon value="WhatsApp Image 2020-01-18 at 11.30.04.jpeg"/>
+          <rolloverEnabled value="true"/>
+          <text value="Button"/>
+          <verifyInputWhenFocusTarget value="true"/>
+          <visible value="true"/>
+        </properties>
+      </component>
+      <component id="f1a07" class="javax.swing.JButton" binding="btn1">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <borderPainted value="false"/>
+          <contentAreaFilled value="false"/>
+          <focusPainted value="false"/>
+          <focusable value="true"/>
+          <font size="18"/>
+          <foreground color="-12107288"/>
+          <icon value="WhatsApp Image 2020-01-18 at 11.30.04.jpeg"/>
+          <rolloverEnabled value="true"/>
+          <text value="Button"/>
+          <verifyInputWhenFocusTarget value="true"/>
+          <visible value="true"/>
         </properties>
       </component>
     </children>
