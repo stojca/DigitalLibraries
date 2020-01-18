@@ -7,7 +7,7 @@ public class StartImageOperations {
     public static void image_operations(String image_path) throws ParseException
     {
         try {
-            ImageIndexer.index_images();
+            //ImageIndexer.index_images();
             SearcherImage.searchImage(image_path);
 
         }

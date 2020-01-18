@@ -42,14 +42,14 @@ public class GetImage extends JFrame{
           String path = selectedFile.getAbsolutePath();
           //label.setIcon(ResizeImage(path));
 
-//          try
-//          {
-//            //StartImageOperations.image_operations(path);
-//          }
-//          catch (Exception exp)
-//          {
-//            exp.printStackTrace();
-//          }
+          try
+          {
+            StartImageOperations.image_operations(path);
+          }
+          catch (Exception exp)
+          {
+            exp.printStackTrace();
+          }
 
           new ImageResults(path);
           museumBrowser.setVisible(false);
@@ -66,7 +66,15 @@ public class GetImage extends JFrame{
       @Override
       public void actionPerformed(ActionEvent e) {
         museumBrowser.dispose();
-        new MuseumBrowser();
+        try
+        {
+          new MuseumBrowser(false);
+        }
+        catch (Exception ex)
+        {
+          ex.printStackTrace();
+        }
+
       }
     });
 

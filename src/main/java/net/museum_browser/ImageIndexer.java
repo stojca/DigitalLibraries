@@ -25,7 +25,7 @@ public class ImageIndexer {
     public static void index_images() throws IOException {
 
         // Getting all images from a directory and its sub directories.
-        ArrayList<String> images = FileUtils.getAllImages(new File("documents/images"), true);
+        ArrayList<String> images = FileUtils.getAllImages(new File("documents/imagesIDs"), true);
 
         // Creating a CEDD document builder and indexing all files.
         GlobalDocumentBuilder globalDocumentBuilder = new GlobalDocumentBuilder(CEDD.class);
@@ -34,7 +34,8 @@ public class ImageIndexer {
         globalDocumentBuilder.addExtractor(AutoColorCorrelogram.class);
         // Creating an Lucene IndexWriter
         IndexWriterConfig conf = new IndexWriterConfig(new WhitespaceAnalyzer());
-        IndexWriter iw = new IndexWriter(FSDirectory.open(Paths.get("documents/image_indexes")), conf);
+        IndexWriter iw = new IndexWriter(FSDirectory.open(Paths.get("documents/imageIndexes")), conf);
+
         // Iterating through images building the low level features
         for (Iterator<String> it = images.iterator(); it.hasNext(); ) {
             String imageFilePath = it.next();

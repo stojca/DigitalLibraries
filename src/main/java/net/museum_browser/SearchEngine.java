@@ -74,7 +74,7 @@ public class SearchEngine extends JFrame{
         setSearchEngine(searchEngine);
     }
 
-    public SearchEngine() {
+    public SearchEngine(){
 
         buttonSearch.addActionListener(new ActionListener() {
             @Override
@@ -98,8 +98,17 @@ public class SearchEngine extends JFrame{
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                new MuseumBrowser();
                 searchEngine.setVisible(false);
+
+                try
+                {
+                    new MuseumBrowser(false);
+                }
+                catch (Exception ex)
+                {
+                    ex.printStackTrace();
+                }
+
             }
         });
     }

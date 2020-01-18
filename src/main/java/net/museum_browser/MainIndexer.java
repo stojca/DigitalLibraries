@@ -41,10 +41,10 @@ public class MainIndexer {
 
     private void indexFiles() throws IOException
     {
-        cleanIndexFolder();
+        //cleanIndexFolder();
         indexer = new Indexer(indexDir);
 
-        indexer.createIndex("documents/html/searchHtmls", new TextFileFilter());
+        //indexer.createIndex("documents/html/searchHtmls", new TextFileFilter());
 
         long endTime = System.currentTimeMillis();
 

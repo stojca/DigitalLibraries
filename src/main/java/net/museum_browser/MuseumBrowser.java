@@ -17,8 +17,10 @@ public class MuseumBrowser {
         MuseumBrowser.museumBrowser = museumBrowser;
     }
 
-    public MuseumBrowser() {
+    public MuseumBrowser(boolean create) throws Exception{
         initialize();
+        if(create)
+            MainStart.createImages();
     }
 
     private void initialize() {

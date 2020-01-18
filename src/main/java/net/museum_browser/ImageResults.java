@@ -24,23 +24,30 @@ public class ImageResults extends JFrame{
     private JButton prev;
     private JButton next;
     public int prevVisible = 0;
+    public int number_of_images = 0;
     public static JFrame imageResults = null;
 
     public static Map<Integer, String> image_paths = new HashMap<>();
+    public static Map<Integer, String> image_urls = new HashMap<>();
     Integer index_label_1 = 0;
 
 
     public void fillImages()
     {
-        image_paths.put(1, "documents/images/image_1.jpg");
-        image_paths.put(2, "documents/images/image_2.jpg");
-        image_paths.put(3, "documents/images/image_3.jpg");
-        image_paths.put(4, "documents/images/image_4.jpg");
-        image_paths.put(5, "documents/images/image_5.jpg");
-        image_paths.put(6, "documents/images/image_6.jpg");
+        if(SearcherImage.image_paths.size() % 2 != 0)
+            number_of_images --;
 
+        System.out.println("searcher " + SearcherImage.image_paths.size());
+        Integer  index = 1;
+        for(String it: SearcherImage.image_paths)
+        {
+            image_paths.put(index, it);
+            index ++;
+        }
 
+        SearcherImage.image_paths.clear();
     }
+
 
     public ImageResults(String path)
     {
@@ -51,22 +58,30 @@ public class ImageResults extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 imageResults.dispose();
-                new MuseumBrowser();
+                try
+                {
+                    image_paths.clear();
+                    new GetImage();
+                }
+                catch (Exception ex)
+                {
+                    ex.printStackTrace();
+                }
             }
         });
         next.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ImageIcon image_1  = ResizeImageLabel(image_paths.get(++index_label_1));
+                ImageIcon image_1  = ResizeImageLabel("documents/imagesIDs/" + image_paths.get(++index_label_1));
                 System.out.println("next 1" + index_label_1);
-                ImageIcon image_2  = ResizeImageLabel(image_paths.get(++index_label_1));
+                ImageIcon image_2  = ResizeImageLabel("documents/imagesIDs/" + image_paths.get(++index_label_1));
                 System.out.println("next 2" + index_label_1);
 
                 label_1.setIcon(image_1);
                 label_2.setIcon(image_2);
 
                 //TODO 6 is number of image size
-                if(index_label_1 == 6)
+                if(index_label_1 == number_of_images)
                     next.setVisible(false);
                 else
                 {
@@ -85,22 +100,19 @@ public class ImageResults extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 index_label_1 -=2;
                 System.out.println("prev 1" + index_label_1);
-                ImageIcon image_1  = ResizeImageLabel(image_paths.get(index_label_1));
+                ImageIcon image_1  = ResizeImageLabel("documents/imagesIDs/" + image_paths.get(index_label_1));
                 label_2.setIcon(image_1);
 
                 index_label_1 --;
                 System.out.println("prev 2" + index_label_1);
-                ImageIcon image_2  = ResizeImageLabel(image_paths.get(index_label_1));
+                ImageIcon image_2  = ResizeImageLabel("documents/imagesIDs/" + image_paths.get(index_label_1));
                 label_1.setIcon(image_2);
-                if(index_label_1 == 6)
+                if(index_label_1 == number_of_images)
                     next.setVisible(false);
                 else
                 {
                     next.setVisible(true);
                 }
-
-
-
 
                 if(index_label_1 < 2)
                 {
@@ -114,13 +126,35 @@ public class ImageResults extends JFrame{
         label_1.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
+                String path_to_open = null;
+                for(Map.Entry<String,  String> entry: MainStart.image_urls.entrySet())
+                {
+                    Integer index = index_label_1 - 1;
+                    System.out.println("1--> " + entry.getValue());
+
+                    System.out.println(image_paths.get(index));
+
+                    if(entry.getValue().contains(image_paths.get(index)))
+                    {
+                        path_to_open = entry.getKey();
+                    }
+                }
                 try
                 {
                     if (Desktop.isDesktopSupported()) {
                         Desktop desktop = Desktop.getDesktop();
                         try {
-                            URI uri = new URI("http://www.hotelgiovanni.cz/");
-                            desktop.browse(uri);
+                            if(path_to_open != null)
+                            {
+                                System.out.println("-->" + path_to_open);
+                                URI uri = new URI(path_to_open);
+                                desktop.browse(uri);
+                            }
+                            else
+                            {
+                                System.out.println("path could not be found");
+                            }
+
                         } catch (IOException ex) {
                             // do nothing
                         } catch (URISyntaxException ex) {
@@ -142,13 +176,36 @@ public class ImageResults extends JFrame{
         label_2.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
+                String path_to_open = null;
+                //get path to display
+                for(Map.Entry<String,  String> entry: MainStart.image_urls.entrySet())
+                {
+                    Integer index = index_label_1;
+                    System.out.println("1--> " + entry.getValue());
+                    System.out.println("2--> " + image_paths.get(index));
+
+                    if(entry.getValue().contains(image_paths.get(index)))
+                    {
+                        path_to_open = entry.getKey();
+                    }
+                }
+
                 try
                 {
                     if (Desktop.isDesktopSupported()) {
                         Desktop desktop = Desktop.getDesktop();
                         try {
-                            URI uri = new URI("http://www.hotelgiovanni.cz/");
-                            desktop.browse(uri);
+                            if(path_to_open != null)
+                            {
+                                System.out.println("-->" + path_to_open);
+                                URI uri = new URI(path_to_open);
+                                desktop.browse(uri);
+                            }
+                            else
+                            {
+                                System.out.println("path could not be found");
+                            }
+
                         } catch (IOException ex) {
                             // do nothing
                         } catch (URISyntaxException ex) {
@@ -180,14 +237,14 @@ public class ImageResults extends JFrame{
 
         fillImages();
 
-        ImageIcon image  = ResizeImage(image_paths.get(1));
+        ImageIcon image  = ResizeImage(path);
         mainLabel.setIcon(image);
 
-        ImageIcon image_1  = ResizeImageLabel(image_paths.get(1));
+        ImageIcon image_1  = ResizeImageLabel("documents/imagesIDs/" + image_paths.get(1));
         label_1.setIcon(image_1);
 
 
-        ImageIcon image_2  = ResizeImageLabel(image_paths.get(2));
+        ImageIcon image_2  = ResizeImageLabel("documents/imagesIDs/" +image_paths.get(2));
         label_2.setIcon(image_2);
         index_label_1 +=2;
         prev.setVisible(false);
@@ -200,7 +257,7 @@ public class ImageResults extends JFrame{
 
     public ImageIcon ResizeImage(String ImagePath)
     {
-        ImageIcon MyImage = new ImageIcon("documents/images/image_9.jpg");
+        ImageIcon MyImage = new ImageIcon(ImagePath);
         Image img = MyImage.getImage();
         Image newImg = img.getScaledInstance(600, 300, Image.SCALE_SMOOTH);
         ImageIcon image = new ImageIcon(newImg);
