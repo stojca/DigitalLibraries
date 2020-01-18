@@ -27,7 +27,7 @@ public class MuseumBrowser {
         museumBrowser.setContentPane(this.mainView);
         museumBrowser.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         museumBrowser.setLocationRelativeTo(null);
-        museumBrowser.setSize(600,500);
+        museumBrowser.setSize(700,550);
         museumBrowser.setVisible(true);
         setMuseumBrowser(museumBrowser);
 

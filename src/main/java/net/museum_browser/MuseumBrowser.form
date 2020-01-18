@@ -16,16 +16,8 @@
         </constraints>
         <properties>
           <font size="36"/>
+          <icon value="WhatsApp Image 2020-01-18 at 11.30.04.jpeg"/>
           <text value="J. Paul Getty Museum Browser"/>
-        </properties>
-      </component>
-      <component id="c6dd8" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <font size="18"/>
-          <text value="Click one of the buttons below to either search by image or text"/>
         </properties>
       </component>
       <component id="49893" class="javax.swing.JButton" binding="searchByTextButton" default-binding="true">
@@ -44,6 +36,15 @@
         <properties>
           <background color="-1"/>
           <text value="Search by Image"/>
+        </properties>
+      </component>
+      <component id="c6dd8" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="18"/>
+          <text value="Click one of the buttons below to either search by image or text"/>
         </properties>
       </component>
     </children>

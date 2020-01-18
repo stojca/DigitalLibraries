@@ -80,8 +80,9 @@ public class SearchEngine extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 setSearchTerm(searchField.getText());
-                new SearchByTextResults(searchTerm);
                 searchEngine.setVisible(false);
+                System.out.println("Searched term is"+ searchField.getText());
+                new SearchByTextResults(searchField.getText());
                 MainIndexer.startMethod(searchTerm);
             }
         });
