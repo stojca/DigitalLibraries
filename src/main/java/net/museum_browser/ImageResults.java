@@ -34,6 +34,8 @@ public class ImageResults extends JFrame{
 
     public void fillImages()
     {
+
+        number_of_images = SearcherImage.image_paths.size();
         if(SearcherImage.image_paths.size() % 2 != 0)
             number_of_images --;
 
