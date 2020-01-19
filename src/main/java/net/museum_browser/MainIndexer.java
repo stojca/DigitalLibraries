@@ -16,7 +16,7 @@ public class MainIndexer {
     String indexDir = "documents/indices";
     Indexer indexer;
     Searcher searcher;
-    private static List<String> terms = new ArrayList<String>();
+    public static List<String> terms = new ArrayList<String>();
 
     public static void startMethod(String searchTerm){
         //System.out.println("searchTerm is: "+ searchTerm);
@@ -62,14 +62,10 @@ public class MainIndexer {
         {
             Document doc = searcher.getDocument(scoreDoc);
             System.out.println("File: " + doc.get(Constants.FILE_PATH));
+            String temp = doc.get(Constants.FILE_PATH).split("searchHtmls")[1];
+            System.out.println("file is " + temp.substring(1, temp.length()));
+            terms.add(temp.substring(1, temp.length()));
 
-//            for(Map.Entry<String, String> file : SearchEngine.file_urls.entrySet())
-//            {
-//                if(doc.get(Constants.FILE_PATH).contains(file.getKey()))
-//                {
-//                    System.out.println(file.getValue());
-//                }
-//            }
         }
         indexer.close();
         searcher.close();

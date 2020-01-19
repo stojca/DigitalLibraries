@@ -38,20 +38,25 @@ public class SearchByTextResults extends JFrame{
 
     public static Map<Integer, String> image_paths = new HashMap<>();
 
-    public void fillImages()
+    public void fillText()
     {
-        for(int i=1; i<51; i++)
+        Integer i = 1;
+        System.out.println("size" + MainIndexer.terms.size());
+        for(String it: MainIndexer.terms)
         {
-            String value = "documents/images/image_"+i+".jpg";
-            image_paths.put(i, value);
+            image_paths.put(i, it);
+            i++;
         }
 
 
+        for(int it = 1; it < image_paths.size(); it++)
+            System.out.println("image " + image_paths.get(it));
+        MainIndexer.terms.clear();
     }
 
     public void initialize(String searched_term)
     {
-        fillImages();
+
         label1.setText(searched_term);
         searchResults = new JFrame("SearchByTextResults");
         term.setText(searched_term);
@@ -59,6 +64,8 @@ public class SearchByTextResults extends JFrame{
         searchResults.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         searchResults.setSize(800,800);
         searchResults.setVisible(true);
+
+        fillText();
 
         btn1 = initButtons(btn1, index);
         btn2 = initButtons(btn2, ++index);
@@ -141,17 +148,40 @@ public class SearchByTextResults extends JFrame{
     }
     public JButton initButtons(JButton button, int index){
         String path_to_doc = image_paths.get(index);
-        String appended = "<HTML><U>"+path_to_doc+"</U>.</HTML>";
+
+
+        String path_to_open = null;
+        System.out.println("path " + path_to_doc);
+        for(Map.Entry<String,  String> entry: MainStart.image_links.entrySet())
+        {
+            if(entry.getValue().equals("museum_object_1261.html"))
+                System.out.println("masp ");
+
+            if(entry.getValue().equals(path_to_doc))
+            {
+
+                path_to_open = entry.getKey().substring(0, entry.getKey().length() - 1);
+            }
+            else
+            {
+                //System.out.println("doesn't exists");
+            }
+        }
+
+
+        String appended = "<HTML><U>"+path_to_open+"</U>.</HTML>";
         System.out.println("Apendovani je " + appended);
         button.setText(appended);
         button.setHorizontalAlignment(SwingConstants.LEFT);
         button.setBorderPainted(false);
         button.setOpaque(false);
+        String path = path_to_open;
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    URI uri = new URI("http://java.sun.com");
+
+                    URI uri = new URI(path);
                     open(uri);
 
                 } catch (URISyntaxException ex) {

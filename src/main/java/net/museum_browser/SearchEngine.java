@@ -82,8 +82,11 @@ public class SearchEngine extends JFrame{
                 setSearchTerm(searchField.getText());
                 searchEngine.setVisible(false);
                 System.out.println("Searched term is"+ searchField.getText());
-                new SearchByTextResults(searchField.getText());
+
                 MainIndexer.startMethod(searchTerm);
+
+                new SearchByTextResults(searchField.getText());
+
             }
         });
 

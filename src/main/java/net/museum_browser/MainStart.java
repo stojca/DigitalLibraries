@@ -7,6 +7,7 @@ import java.util.Map;
 
 public class MainStart {
   public static Map<String, String> image_urls = new HashMap<>();
+  public static Map<String, String> image_links = new HashMap<>();
   public static boolean isCreated = false;
 
 
@@ -28,7 +29,7 @@ public class MainStart {
     for (File file : listOfFiles) {
       if (file.isFile()) {
         //System.out.println(file.getAbsolutePath());
-        parseFile(file.getAbsolutePath());
+        parseFile(file.getAbsolutePath(), file.getName());
 
       }
     }
@@ -91,8 +92,9 @@ public class MainStart {
     os.close();
   }
 
-  public static void parseFile(String filepath)
+  public static void parseFile(String filepath, String name)
   {
+    //System.out.println("file path " + filepath);
     String image_url = null;
     String image_link = null;
     BufferedReader reader;
@@ -113,6 +115,12 @@ public class MainStart {
           //System.out.println(line);
           //System.out.println(line.substring(29, line.length() - 2));
           image_link = line.substring(30, line.length() - 3);
+        }
+
+        if(image_link != null)
+        {
+          image_links.put(image_link, name);
+
         }
 
         if(image_url != null && image_link != null)
