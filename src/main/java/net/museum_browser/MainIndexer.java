@@ -51,6 +51,7 @@ public class MainIndexer {
     }
 
     private void search(String searchQuery) throws IOException, ParseException {
+        List<String> temp_list = new ArrayList<>();
         System.out.println(searchQuery);
         searcher = new Searcher(indexDir);
         long startTime = System.currentTimeMillis();
@@ -63,13 +64,33 @@ public class MainIndexer {
             Document doc = searcher.getDocument(scoreDoc);
             System.out.println("File: " + doc.get(Constants.FILE_PATH));
             String temp = doc.get(Constants.FILE_PATH).split("searchHtmls")[1];
-            System.out.println("file is " + temp.substring(1, temp.length()));
-            terms.add(temp.substring(1, temp.length()));
+            //System.out.println("file is " + temp.substring(1, temp.length()));
 
+            //System.out.println("size " + temp_list.size());
+
+            if(!checkIfExists(temp_list, (temp.substring(1, temp.length()))))
+            {
+                //System.out.println("ovo dodajem " + temp.substring(1, temp.length()));
+                terms.add(temp.substring(1, temp.length()));
+            }
+
+            temp_list.add(temp.substring(1, temp.length()));
         }
         indexer.close();
         searcher.close();
 
+    }
+
+    public boolean checkIfExists(List<String> terms, String term)
+    {
+        for(String it: terms)
+        {
+            //System.out.println("it " + it);
+            //System.out.println("tem is " + term);
+            if(it.equals(term))
+                return true;
+        }
+        return false;
     }
 
 

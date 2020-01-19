@@ -49,8 +49,8 @@ public class SearchByTextResults extends JFrame{
         }
 
 
-        for(int it = 1; it < image_paths.size(); it++)
-            System.out.println("image " + image_paths.get(it));
+        for(Map.Entry<Integer, String> entry: image_paths.entrySet())
+            System.out.println("image " + entry.getValue());
         MainIndexer.terms.clear();
     }
 
